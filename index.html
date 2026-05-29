@@ -316,6 +316,204 @@
       .cta-section { grid-template-columns: 1fr; padding: 48px 28px; gap: 28px; }
       .cta-heading { font-size: 30px; }
     }
+
+    /* LOGOS */
+    .logos-section {
+      padding: 40px 56px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logos-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-right: 16px;
+      white-space: nowrap;
+    }
+
+    .logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 36px;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+
+    .logo-item:hover { opacity: 1; }
+
+    .logo-item img {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-item.hbo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #1a1a1a;
+    }
+
+    .logo-item.netflix {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #E50914;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-item.apple {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+
+    .logo-divider {
+      width: 1px;
+      height: 28px;
+      background: #ddd;
+    }
+
+    /* FEATURED PROJECT */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .project-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-meta {
+      padding-top: 4px;
+    }
+
+    .project-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #FAF8F4;
+      background: #C8522A;
+      padding: 5px 12px;
+      margin-bottom: 20px;
+    }
+
+    .project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.2;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .project-subtitle {
+      font-size: 13px;
+      font-weight: 400;
+      color: #C8522A;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .project-body {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .project-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .project-detail {
+      display: flex;
+      gap: 12px;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .project-detail-label {
+      font-weight: 500;
+      color: #1a1a1a;
+      min-width: 80px;
+    }
+
+    .project-detail-val {
+      font-weight: 300;
+      color: #666;
+    }
+
+    /* WHAT I'M WATCHING */
+    .watching-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .watching-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 32px;
+      padding: 28px 0;
+      border-bottom: 0.5px solid #ddd;
+      align-items: start;
+    }
+
+    .watching-item:first-child { padding-top: 0; }
+    .watching-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .watching-creator {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .watching-platform {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #C8522A;
+    }
+
+    .watching-body {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #666;
+      padding-top: 4px;
+    }
+
+    @media (max-width: 680px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .watching-item { grid-template-columns: 1fr; gap: 8px; }
+      .logos-section { flex-wrap: wrap; gap: 12px; }
+    }
+  
   </style>
 </head>
 <body>
@@ -336,6 +534,20 @@
         </div>
       </div>
     </div>
+
+  <div class="logos-section">
+    <span class="logos-label">As seen on</span>
+    <div class="logo-divider"></div>
+    <div class="logo-item hbo">HBO</div>
+    <div class="logo-divider"></div>
+    <div class="logo-item netflix">NETFLIX</div>
+    <div class="logo-divider"></div>
+    <div class="logo-item apple">Apple TV+</div>
+    <div class="logo-divider"></div>
+    <div class="logo-item"><img src="radicalmedia.png" alt="RadicalMedia" style="height:20px; filter: invert(0);" /></div>
+    <div class="logo-divider"></div>
+    <div class="logo-item"><img src="salesforce.png" alt="Salesforce" style="height:30px;" /></div>
+  </div>
 
     <div class="section">
       <div class="section-label">Why YouTube</div>
@@ -418,6 +630,86 @@
               <span class="tag">Renaissance Scholar</span>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Featured project</div>
+      <div class="project-grid">
+        <img class="project-img" src="ewf.jpg" alt="Earth, Wind & Fire documentary poster" />
+        <div class="project-meta">
+          <div class="project-badge">Live right now — Tribeca 2025</div>
+          <div class="project-title">Earth, Wind & Fire: To Be Celestial vs. That's the Weight of the World</div>
+          <div class="project-subtitle">HBO Original Documentary · Directed by Questlove</div>
+          <p class="project-body">One of the projects I'm most proud of — and one that's very much alive right now. We're in the final stretch of gearing up for the Tribeca Film Festival premiere next week, where the band will perform live at the Beacon Theatre in NYC. This is the kind of project that shows what's possible when you marry a legendary artist, a visionary director, and a platform willing to let the story breathe.</p>
+          <p class="project-body">My role spanned the full arc: from developing the marketing strategy and positioning framework through building out the promotional assets, coordinating the festival launch, and managing cross-functional teams across HBO, the production company, and the band's team. Getting a project of this scale to a world premiere is a full-contact sport — and it's exactly the kind of high-stakes, multi-stakeholder program management this role calls for.</p>
+          <div class="project-details">
+            <div class="project-detail">
+              <span class="project-detail-label">Platform</span>
+              <span class="project-detail-val">HBO / HBO Max</span>
+            </div>
+            <div class="project-detail">
+              <span class="project-detail-label">Director</span>
+              <span class="project-detail-val">Ahmir "Questlove" Thompson</span>
+            </div>
+            <div class="project-detail">
+              <span class="project-detail-label">Premiere</span>
+              <span class="project-detail-val">Tribeca Film Festival — June 2025</span>
+            </div>
+            <div class="project-detail">
+              <span class="project-detail-label">Live event</span>
+              <span class="project-detail-val">Earth, Wind & Fire performing at Beacon Theatre, NYC</span>
+            </div>
+          </div>
+          <div class="career-tags">
+            <span class="tag">GTM Strategy</span>
+            <span class="tag">Festival Launch</span>
+            <span class="tag">C-Suite Partnerships</span>
+            <span class="tag">Cross-functional Execution</span>
+            <span class="tag">Live Event Production</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">What I'm watching</div>
+      <div class="watching-grid">
+        <div class="watching-item">
+          <div>
+            <div class="watching-creator">Diary of a CEO</div>
+            <div class="watching-platform">YouTube</div>
+          </div>
+          <p class="watching-body">Steven Bartlett built one of the most consistent long-form interview formats on YouTube — every episode is a masterclass in retention, guest selection, and brand building. It's a perfect example of what happens when a creator treats YouTube like a real media company, not an afterthought.</p>
+        </div>
+        <div class="watching-item">
+          <div>
+            <div class="watching-creator">Tinx</div>
+            <div class="watching-platform">TikTok / YouTube</div>
+          </div>
+          <p class="watching-body">Nobody builds audience loyalty quite like Tinx. She's turned a very specific voice into a genuinely trusted brand — her followers don't just watch her, they listen to her. That kind of community trust is exactly what brands want to be adjacent to, and she's figured out how to maintain it at scale across platforms.</p>
+        </div>
+        <div class="watching-item">
+          <div>
+            <div class="watching-creator">Delaney Rowe</div>
+            <div class="watching-platform">TikTok</div>
+          </div>
+          <p class="watching-body">One of the sharpest cultural commentators on TikTok right now. She covers entertainment, film, and media with the kind of specificity and wit that makes you feel like you're watching someone who actually knows the industry — not just someone reacting to it. Her growth trajectory is one I've been tracking closely.</p>
+        </div>
+        <div class="watching-item">
+          <div>
+            <div class="watching-creator">John Green</div>
+            <div class="watching-platform">YouTube</div>
+          </div>
+          <p class="watching-body">John Green's channel is a reminder that depth and sincerity never go out of style on YouTube. He's been building an audience on the platform since its early days and has never chased a trend — which is somehow the most counterintuitively powerful creator strategy of all. There's a lesson in that for every brand trying to figure out YouTube.</p>
+        </div>
+        <div class="watching-item">
+          <div>
+            <div class="watching-creator">Eli Rallo</div>
+            <div class="watching-platform">TikTok</div>
+          </div>
+          <p class="watching-body">Eli has built something rare: a community that feels genuinely intimate at real scale. Her content sits at the intersection of lifestyle, self-development, and raw honesty — and her audience shows up for every piece of it. She's a great example of a creator who understands that vulnerability, done right, is a brand strategy.</p>
         </div>
       </div>
     </div>
