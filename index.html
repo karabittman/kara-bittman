@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kara Bittman — YouTube Application</title>
+  <title>Kara Bittman, YouTube Application</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -200,6 +200,9 @@
       font-size: 16px;
       font-weight: 700;
       color: #1a1a1a;
+      min-height: 28px;
+      display: flex;
+      align-items: center;
     }
 
     .career-title {
@@ -317,14 +320,7 @@
       .cta-heading { font-size: 30px; }
     }
 
-    /* LOGOS */
-    .logos-section {
-      padding: 40px 56px;
-      border-bottom: 1px solid #ddd;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+    /* LOGOS + CREATOR CARDS */
 
     .logos-label {
       font-size: 10px;
@@ -514,6 +510,207 @@
       .logos-section { flex-wrap: wrap; gap: 12px; }
     }
   
+
+    /* LOGOS REDESIGN */
+    .logos-section {
+      padding: 40px 56px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .logos-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .logos-divider-row {
+      height: 1px;
+      background: #eee;
+      width: 100%;
+    }
+
+    .logos-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #bbb;
+      min-width: 100px;
+    }
+
+    .logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.65;
+      transition: opacity 0.2s;
+      height: 32px;
+    }
+
+    .logo-item:hover { opacity: 1; }
+    .logo-item img { height: 100%; width: auto; object-fit: contain; }
+
+    .logo-hbo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: #1a1a1a;
+    }
+
+    .logo-netflix {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #E50914;
+      letter-spacing: -0.01em;
+    }
+
+    .logo-hulu {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #1CE783;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-apple {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+
+    .logo-amazon {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+
+    .logo-peacock {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-history {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #1a1a1a;
+    }
+
+    .logo-sony {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1a1a1a;
+      white-space: nowrap;
+    }
+
+    .logo-pbs {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 900;
+      color: #1a1a1a;
+    }
+
+    .logo-usc {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 900;
+      color: #990000;
+      letter-spacing: 0.06em;
+    }
+
+    /* CREATOR CARDS */
+    .watching-intro {
+      font-size: 15px;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .creator-cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .creator-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .creator-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .creator-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+    .creator-initials {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: rgba(0,0,0,0.2);
+      z-index: 0;
+    }
+
+    .creator-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 3px;
+    }
+
+    .creator-card-platform {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #C8522A;
+      margin-bottom: 10px;
+    }
+
+    .creator-card-body {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.65;
+      color: #666;
+    }
+
+    @media (max-width: 680px) {
+      .creator-cards { grid-template-columns: repeat(2, 1fr); }
+      .logos-row { gap: 16px; }
+    }
+  
   </style>
 </head>
 <body>
@@ -523,7 +720,7 @@
       <div class="hero-left">
         <div class="hero-eyebrow">Application for YouTube Ads Marketing</div>
         <div class="hero-name">Kara<span>Bittman</span></div>
-        <p class="hero-tagline">Strategic storyteller and program builder with almost 4 years of experience shaping how the world's most compelling stories reach audiences — ready to bring that to YouTube's scale.</p>
+        <p class="hero-tagline">Strategic storyteller and program builder with almost 4 years of experience shaping how the world's most compelling stories reach audiences, ready to bring that to YouTube's scale.</p>
       </div>
       <div class="hero-right">
         <div class="hero-role-label">Applying for</div>
@@ -531,22 +728,32 @@
         <div class="hero-links">
           <a href="https://www.linkedin.com/in/kara-bittman/" target="_blank">LinkedIn ↗</a>
           <a href="mailto:kbittman11@gmail.com">Email me ↗</a>
+          <a href="https://www.imdb.com/name/nm10309904/" target="_blank">IMDb ↗</a>
         </div>
       </div>
     </div>
 
   <div class="logos-section">
     <span class="logos-label">As seen on</span>
-    <div class="logo-divider"></div>
-    <div class="logo-item hbo">HBO</div>
-    <div class="logo-divider"></div>
-    <div class="logo-item netflix">NETFLIX</div>
-    <div class="logo-divider"></div>
-    <div class="logo-item apple">Apple TV+</div>
-    <div class="logo-divider"></div>
-    <div class="logo-item"><img src="radicalmedia.png" alt="RadicalMedia" style="height:20px; filter: invert(0);" /></div>
-    <div class="logo-divider"></div>
-    <div class="logo-item"><img src="salesforce.png" alt="Salesforce" style="height:30px;" /></div>
+    <div class="logos-strip">
+      <div class="logo-item"><img src="hbo.png" alt="HBO" style="height:22px;" /></div>
+      <div class="logo-divider-v"></div>
+      <div class="logo-item"><img src="netflix.png" alt="Netflix" style="height:18px;" /></div>
+      <div class="logo-divider-v"></div>
+      <div class="logo-item"><img src="hulu.png" alt="Hulu" style="height:18px;" /></div>
+      <div class="logo-divider-v"></div>
+      <div class="logo-item"><img src="appletv.png" alt="Apple TV+" style="height:16px;" /></div>
+      <div class="logo-divider-v"></div>
+      <div class="logo-item"><img src="primevideo.png" alt="Prime Video" style="height:20px;" /></div>
+      <div class="logo-divider-v"></div>
+      <div class="logo-item"><img src="peacock.png" alt="Peacock" style="height:20px;" /></div>
+      <div class="logo-divider-v"></div>
+      <div class="logo-item"><img src="history.png" alt="History Channel" style="height:20px;" /></div>
+      <div class="logo-divider-v"></div>
+      <div class="logo-item"><img src="sony.png" alt="Sony Pictures Classics" style="height:16px;" /></div>
+      <div class="logo-divider-v"></div>
+      <div class="logo-item"><img src="pbs.png" alt="PBS" style="height:22px;" /></div>
+    </div></div>
   </div>
 
     <div class="section">
@@ -555,7 +762,7 @@
         <div class="why-item">
           <div class="why-number">01</div>
           <div class="why-title">I speak C-suite every day</div>
-          <p class="why-body">At RadicalMedia, pitching network executives at HBO, Netflix, and Apple isn't a rare event... it's Tuesday. I've built the instinct for translating complex, high-stakes ideas into narratives that move decisions at the top.</p>
+          <p class="why-body">At RadicalMedia, pitching network executives at HBO, Netflix, and Apple isn't a rare event, it's Tuesday. I've built the instinct for translating complex, high-stakes ideas into narratives that move decisions at the top.</p>
         </div>
         <div class="why-item">
           <div class="why-number">02</div>
@@ -570,11 +777,11 @@
         <div class="why-item">
           <div class="why-number">04</div>
           <div class="why-title">I run toward complexity</div>
-          <p class="why-body">Managing cross-functional teams across development, production, post, and publicity on deadline-driven projects has made me a sharper program manager. I thrive in high energy, fast-paced environments.</p>
+          <p class="why-body">Managing cross-functional teams across development, production, post, and publicity on deadline-driven projects has made me a sharper program manager. I thrive in fast-paced, high energy environments.</p>
         </div>
         <div class="why-item" style="grid-column: 1 / -1; border-left: none; border-right: none; border-bottom: none; padding: 36px;">
           <div class="why-number">05</div>
-          <div class="why-title">I am chronically online — and that's a professional asset</div>
+          <div class="why-title">I am chronically online, and that's a professional asset</div>
           <p class="why-body">I don't just manage social platforms for work, I live on them. I know the creator landscape the way most people know their neighborhood: who's rising, who's peaking, what sounds are cycling through, which subcultures are about to break into the mainstream. That instinct isn't something I switch on for a meeting. It's how I actually think, and it's what makes me genuinely useful in a role that demands cultural fluency at speed.</p>
         </div>
       </div>
@@ -586,11 +793,11 @@
         <div class="career-item">
           <div class="career-meta">
             <div class="career-date">2022 – Present</div>
-            <div class="career-co">RadicalMedia</div>
+            <div class="career-co"><img src="radicalmedia.png" alt="RadicalMedia" style="height:16px; vertical-align:middle;" /></div>
           </div>
           <div>
             <div class="career-title">Associate Producer & Entertainment Coordinator</div>
-            <p class="career-desc">Led GTM strategy for documentary launches across HBO, Netflix, Hulu, and Apple TV+, including projects with Earth, Wind & Fire, Noah Kahan, Lil Nas X, and Bono/U2. Developed C-suite presentations for major network partners, managed end-to-end program logistics across cross-functional teams, and oversaw brand presence across 1.2M+ social followers.</p>
+            <p class="career-desc">Led GTM strategy for documentary launches across HBO, Netflix, Hulu, and Apple TV+, including projects with Earth, Wind & Fire, Noah Kahan, Lil Nas X, and Bono. Developed C-suite presentations for major network partners, managed end-to-end program logistics across cross-functional teams, and oversaw brand presence across 1.2M+ social followers.</p>
             <div class="career-tags">
               <span class="tag">GTM Strategy</span>
               <span class="tag">C-Suite Engagement</span>
@@ -603,7 +810,7 @@
         <div class="career-item">
           <div class="career-meta">
             <div class="career-date">Summer 2021</div>
-            <div class="career-co">Salesforce</div>
+            <div class="career-co"><img src="salesforce.png" alt="Salesforce" style="height:24px; vertical-align:middle;" /></div>
           </div>
           <div>
             <div class="career-title">Industry Cloud Solution Alliances Intern</div>
@@ -639,11 +846,11 @@
       <div class="project-grid">
         <img class="project-img" src="ewf.jpg" alt="Earth, Wind & Fire documentary poster" />
         <div class="project-meta">
-          <div class="project-badge">Live right now — Tribeca 2026</div>
+          <div class="project-badge">Live right now, Tribeca 2026</div>
           <div class="project-title">Earth, Wind & Fire: To Be Celestial vs. That's the Weight of the World</div>
           <div class="project-subtitle">HBO Original Documentary · Directed by Questlove</div>
-          <p class="project-body">One of the projects I'm most proud of — and one that's very much alive right now. We're in the final stretch of gearing up for the Tribeca Film Festival premiere next week, where the band will perform live at the Beacon Theatre in NYC. This is the kind of project that shows what's possible when you marry a legendary artist, a visionary director, and a platform willing to let the story breathe.</p>
-          <p class="project-body">My role spanned the full arc: from developing the marketing strategy and positioning framework through building out the promotional assets, coordinating the festival launch, and managing cross-functional teams across HBO, our production company, and the band's team. Getting a project of this scale to a world premiere is a full-contact sport, and it's exactly the kind of high-stakes, multi-stakeholder program management this role calls for.</p>
+          <p class="project-body">One of the projects I'm most proud of, and one that's very much alive right now. We're in the final stretch of gearing up for the Tribeca Film Festival premiere next week, where the band will perform live at the Beacon Theatre in NYC. This is the kind of project that shows what's possible when you marry a legendary artist, a visionary director, and a platform willing to let the story breathe.</p>
+          <p class="project-body">My role spanned the full arc: from developing the marketing strategy and positioning framework through building out the promotional assets, coordinating the festival launch, and managing cross-functional teams across HBO, the production company, and the band's team. Getting a project of this scale to a world premiere is a full-contact sport, and it's exactly the kind of high-stakes, multi-stakeholder program management this role calls for.</p>
           <div class="project-details">
             <div class="project-detail">
               <span class="project-detail-label">Platform</span>
@@ -655,7 +862,7 @@
             </div>
             <div class="project-detail">
               <span class="project-detail-label">Premiere</span>
-              <span class="project-detail-val">Tribeca Film Festival — June 2026</span>
+              <span class="project-detail-val">Tribeca Film Festival, June 2026</span>
             </div>
             <div class="project-detail">
               <span class="project-detail-label">Live event</span>
@@ -675,41 +882,52 @@
 
     <div class="section">
       <div class="section-label">What I'm watching</div>
-      <div class="watching-grid">
-        <div class="watching-item">
-          <div>
-            <div class="watching-creator">Diary of a CEO</div>
-            <div class="watching-platform">YouTube</div>
+      <p class="watching-intro">Five creators I think about when I think about what great platform strategy looks like right now.</p>
+      <div class="creator-cards">
+        <div class="creator-card">
+          <div class="creator-photo" style="background:#e8e3db;">
+            <img src="diary-of-a-ceo.jpg" alt="Diary of a CEO" onerror="this.style.display='none'" />
+            <span class="creator-initials">DC</span>
           </div>
-          <p class="watching-body">Steven Bartlett built one of the most consistent long-form interview formats on YouTube: every episode is a masterclass in retention, guest selection, and brand building. It's a perfect example of what happens when a creator treats YouTube like a real media company, not an afterthought.</p>
+          <div class="creator-card-name">Diary of a CEO</div>
+          <div class="creator-card-platform">YouTube</div>
+          <p class="creator-card-body">Steven Bartlett built one of the most consistent long-form interview formats on YouTube, a masterclass in retention, guest selection, and treating YouTube like a real media company.</p>
         </div>
-        <div class="watching-item">
-          <div>
-            <div class="watching-creator">Tinx</div>
-            <div class="watching-platform">TikTok / YouTube</div>
+        <div class="creator-card">
+          <div class="creator-photo" style="background:#dde8e3;">
+            <img src="tinx.jpg" alt="Tinx" onerror="this.style.display='none'" />
+            <span class="creator-initials">TX</span>
           </div>
-          <p class="watching-body">Nobody builds audience loyalty quite like Tinx. She's turned a very specific voice into a genuinely trusted brand. Her followers don't just watch her, they listen to her. That kind of community trust is exactly what brands want to be adjacent to, and she's figured out how to maintain it at scale across platforms.</p>
+          <div class="creator-card-name">Tinx</div>
+          <div class="creator-card-platform">TikTok / YouTube</div>
+          <p class="creator-card-body">Nobody builds audience loyalty quite like Tinx. Her followers don't just watch her, they listen to her. That kind of trust is exactly what brands want to be adjacent to.</p>
         </div>
-        <div class="watching-item">
-          <div>
-            <div class="watching-creator">Delaney Rowe</div>
-            <div class="watching-platform">TikTok</div>
+        <div class="creator-card">
+          <div class="creator-photo" style="background:#e3dde8;">
+            <img src="delaney-rowe.jpg" alt="Delaney Rowe" onerror="this.style.display='none'" />
+            <span class="creator-initials">DR</span>
           </div>
-          <p class="watching-body">One of the sharpest cultural commentators on TikTok right now. She covers entertainment, film, and media with the kind of specificity and wit that makes you feel like you're watching someone who actually knows the industry, not just someone reacting to it. Her growth trajectory is one I've been tracking closely.</p>
+          <div class="creator-card-name">Delaney Rowe</div>
+          <div class="creator-card-platform">TikTok</div>
+          <p class="creator-card-body">One of the sharpest cultural commentators on TikTok. She covers entertainment and media with the specificity of someone who actually knows the industry, not just reacts to it.</p>
         </div>
-        <div class="watching-item">
-          <div>
-            <div class="watching-creator">John Green</div>
-            <div class="watching-platform">YouTube</div>
+        <div class="creator-card">
+          <div class="creator-photo" style="background:#e8e3db;">
+            <img src="john-green.jpg" alt="John Green" onerror="this.style.display='none'" />
+            <span class="creator-initials">JG</span>
           </div>
-          <p class="watching-body">John Green's channel is a reminder that depth and sincerity never go out of style on YouTube. He's been building an audience on the platform since its early days and has never chased a trend, which is somehow the most counterintuitively powerful creator strategy of all. There's a lesson in that for every brand trying to figure out YouTube.</p>
+          <div class="creator-card-name">John Green</div>
+          <div class="creator-card-platform">YouTube</div>
+          <p class="creator-card-body">A reminder that depth and sincerity never go out of style. He's never chased a trend, which is somehow the most counterintuitively powerful creator strategy of all.</p>
         </div>
-        <div class="watching-item">
-          <div>
-            <div class="watching-creator">Eli Rallo</div>
-            <div class="watching-platform">TikTok</div>
+        <div class="creator-card">
+          <div class="creator-photo" style="background:#e8dde3;">
+            <img src="eli-rallo.jpg" alt="Eli Rallo" onerror="this.style.display='none'" />
+            <span class="creator-initials">ER</span>
           </div>
-          <p class="watching-body">Eli has built something rare: a community that feels genuinely intimate at real scale. Her content sits at the intersection of lifestyle, self-development, and raw honesty. And her audience shows up for every piece of it. She's a great example of a creator who understands that vulnerability, done right, is a brand strategy.</p>
+          <div class="creator-card-name">Eli Rallo</div>
+          <div class="creator-card-platform">TikTok</div>
+          <p class="creator-card-body">Eli has built something rare: genuine intimacy at real scale. Vulnerability, done right, is a brand strategy, and she proves it every time she posts.</p>
         </div>
       </div>
     </div>
