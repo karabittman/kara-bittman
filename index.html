@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kara Bittman — YouTube Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #FAF8F4;
+      color: #1a1a1a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .site {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 0 80px;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 80px 56px 72px;
+      border-bottom: 1.5px solid #1a1a1a;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: end;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 80px;
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      color: #1a1a1a;
+    }
+
+    .hero-name span {
+      display: block;
+      color: #C8522A;
+    }
+
+    .hero-tagline {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.65;
+      color: #555;
+      margin-top: 28px;
+      max-width: 480px;
+    }
+
+    .hero-right {
+      text-align: right;
+      padding-bottom: 6px;
+    }
+
+    .hero-role-label {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .hero-role {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-style: italic;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    .hero-links {
+      margin-top: 24px;
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end;
+    }
+
+    .hero-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1a1a1a;
+      text-decoration: none;
+      border-bottom: 1px solid #1a1a1a;
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .hero-links a:hover { color: #C8522A; border-color: #C8522A; }
+
+    /* SECTIONS */
+    .section {
+      padding: 64px 56px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #C8522A;
+      margin-bottom: 40px;
+    }
+
+    /* WHY GRID */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .why-item {
+      padding: 36px;
+      border: 0.5px solid #ddd;
+    }
+
+    .why-item:nth-child(1),
+    .why-item:nth-child(2) { border-top: none; }
+    .why-item:nth-child(3),
+    .why-item:nth-child(4) { border-bottom: none; }
+    .why-item:nth-child(odd) { border-right: none; }
+    .why-item:nth-child(1),
+    .why-item:nth-child(3) { border-left: none; }
+    .why-item:nth-child(2),
+    .why-item:nth-child(4) { border-right: none; }
+
+    .why-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 900;
+      color: #ede8e0;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .why-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .why-body {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: #666;
+    }
+
+    /* CAREER */
+    .career-list { display: flex; flex-direction: column; }
+
+    .career-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 40px;
+      padding: 40px 0;
+      border-bottom: 0.5px solid #ddd;
+    }
+
+    .career-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .career-item:first-child { padding-top: 0; }
+
+    .career-meta { padding-top: 4px; }
+
+    .career-date {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 8px;
+    }
+
+    .career-co {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .career-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .career-desc {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .career-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border: 0.5px solid #1a1a1a;
+      color: #1a1a1a;
+      border-radius: 2px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .skill-group-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 16px;
+    }
+
+    .skill-item {
+      font-size: 14px;
+      font-weight: 300;
+      color: #1a1a1a;
+      padding: 7px 0;
+      border-bottom: 0.5px solid #e8e2d8;
+      line-height: 1.4;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 72px 56px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .cta-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #1a1a1a;
+    }
+
+    .cta-heading em {
+      color: #C8522A;
+      font-style: italic;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #FAF8F4;
+      background: #1a1a1a;
+      padding: 18px 36px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .cta-btn:hover { background: #C8522A; }
+
+    /* RESPONSIVE */
+    @media (max-width: 680px) {
+      .hero { grid-template-columns: 1fr; padding: 48px 28px 56px; gap: 32px; }
+      .hero-name { font-size: 56px; }
+      .hero-right { text-align: left; }
+      .hero-links { justify-content: flex-start; }
+      .section { padding: 48px 28px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-item:nth-child(n) { border: none; border-bottom: 0.5px solid #ddd; padding: 28px 0; }
+      .why-item:last-child { border-bottom: none; }
+      .career-item { grid-template-columns: 1fr; gap: 12px; }
+      .skills-grid { grid-template-columns: 1fr; gap: 24px; }
+      .cta-section { grid-template-columns: 1fr; padding: 48px 28px; gap: 28px; }
+      .cta-heading { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+
+    <div class="hero">
+      <div class="hero-left">
+        <div class="hero-eyebrow">Application for YouTube Ads Marketing</div>
+        <div class="hero-name">Kara<span>Bittman</span></div>
+        <p class="hero-tagline">Strategic storyteller and program builder with 3+ years shaping how the world's most compelling stories reach audiences — ready to bring that to YouTube's scale.</p>
+      </div>
+      <div class="hero-right">
+        <div class="hero-role-label">Applying for</div>
+        <div class="hero-role">Marketing Manager,<br>Strategic Growth Programs<br>YouTube Ads Marketing</div>
+        <div class="hero-links">
+          <a href="https://www.linkedin.com/in/kara-bittman/" target="_blank">LinkedIn ↗</a>
+          <a href="mailto:kbittman11@gmail.com">Email me ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Why YouTube</div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-number">01</div>
+          <div class="why-title">I speak C-suite every day</div>
+          <p class="why-body">At RadicalMedia, pitching network executives at HBO, Netflix, and Apple isn't a rare event — it's Tuesday. I've built the instinct for translating complex, high-stakes ideas into narratives that move decisions at the top.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-number">02</div>
+          <div class="why-title">I've built B2B programs from zero</div>
+          <p class="why-body">At Salesforce, I designed and launched a 200+ page partner enablement program from scratch, training 548+ partners across 10 product launches. Building something scalable from the ground up is work I know and love.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-number">03</div>
+          <div class="why-title">YouTube is where I want to be</div>
+          <p class="why-body">I've spent three years watching creator-led content reshape how audiences engage with brands. The shift from media buy to creative platform is the most important conversation in marketing right now — and YouTube is leading it.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-number">04</div>
+          <div class="why-title">I run toward complexity</div>
+          <p class="why-body">Managing cross-functional teams across development, production, post, and publicity on deadline-driven projects has made me a sharper program manager. I find clarity in the complicated and energy in the fast-moving.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Career highlights</div>
+      <div class="career-list">
+        <div class="career-item">
+          <div class="career-meta">
+            <div class="career-date">2022 – Present</div>
+            <div class="career-co">RadicalMedia</div>
+          </div>
+          <div>
+            <div class="career-title">Associate Producer & Entertainment Coordinator</div>
+            <p class="career-desc">Led GTM strategy for documentary launches across HBO, Netflix, Hulu, and Apple TV+ — including projects with Earth, Wind & Fire, Noah Kahan, Lil Nas X, and Bono. Developed C-suite presentations for major network partners, managed end-to-end program logistics across cross-functional teams, and oversaw brand presence across 1.2M+ social followers.</p>
+            <div class="career-tags">
+              <span class="tag">GTM Strategy</span>
+              <span class="tag">C-Suite Engagement</span>
+              <span class="tag">Cross-functional Programs</span>
+              <span class="tag">Brand Storytelling</span>
+              <span class="tag">Performance Reporting</span>
+            </div>
+          </div>
+        </div>
+        <div class="career-item">
+          <div class="career-meta">
+            <div class="career-date">Summer 2021</div>
+            <div class="career-co">Salesforce</div>
+          </div>
+          <div>
+            <div class="career-title">Industry Cloud Solution Alliances Intern</div>
+            <p class="career-desc">Designed and launched a scaled 200+ page B2B partner enablement program from scratch, training 548+ partners across 10 product launches. Presented strategic acquisition frameworks to 20 C-suite executives and built 20 enablement assets for Loyalty Management — developing hands-on experience building educational programs that drive commercial outcomes.</p>
+            <div class="career-tags">
+              <span class="tag">B2B Program Design</span>
+              <span class="tag">Partner Enablement</span>
+              <span class="tag">Executive Presentations</span>
+              <span class="tag">Product Adoption</span>
+            </div>
+          </div>
+        </div>
+        <div class="career-item">
+          <div class="career-meta">
+            <div class="career-date">2018 – 2022</div>
+            <div class="career-co">USC</div>
+          </div>
+          <div>
+            <div class="career-title">BS Business Administration & BA Entertainment</div>
+            <p class="career-desc">Dual degree from USC Marshall School of Business and School of Dramatic Arts. Graduated Summa Cum Laude with a 3.9 GPA. Associate Producer at USC Trojan Vision, producing 30 live broadcasts reaching 8M+ viewers in Los Angeles.</p>
+            <div class="career-tags">
+              <span class="tag">Summa Cum Laude</span>
+              <span class="tag">3.9 GPA</span>
+              <span class="tag">Renaissance Scholar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Core skills</div>
+      <div class="skills-grid">
+        <div>
+          <div class="skill-group-title">Strategy & Marketing</div>
+          <div class="skill-item">Go-to-market strategy</div>
+          <div class="skill-item">Brand positioning</div>
+          <div class="skill-item">Strategic storytelling</div>
+          <div class="skill-item">Executive advisory programs</div>
+          <div class="skill-item">B2B program management</div>
+        </div>
+        <div>
+          <div class="skill-group-title">Execution & Operations</div>
+          <div class="skill-item">End-to-end program management</div>
+          <div class="skill-item">Cross-functional coordination</div>
+          <div class="skill-item">Impact measurement & reporting</div>
+          <div class="skill-item">C-suite communications</div>
+          <div class="skill-item">Sales enablement</div>
+        </div>
+        <div>
+          <div class="skill-group-title">Platforms & Tools</div>
+          <div class="skill-item">YouTube & TikTok</div>
+          <div class="skill-item">Amazon DSP Certified</div>
+          <div class="skill-item">Adobe Suite</div>
+          <div class="skill-item">G-Suite</div>
+          <div class="skill-item">Digital advertising</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <div class="cta-heading">Let's talk about<br>what <em>YouTube</em><br>could look like.</div>
+      <a class="cta-btn" href="mailto:kbittman11@gmail.com">Get in touch</a>
+    </div>
+
+  </div>
+</body>
+</html>
